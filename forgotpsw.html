@@ -56,7 +56,6 @@ span.psw{
 </head>
 <body>
   <link href="cisco.css" rel="stylesheet" type="text/css" />
-  <form action="cisco.php" method="post" style="position: absolute; top: 100px; right:200px;">
     <div class="container" style="background-color:white;">
     <div class="imgcontainer">
       <img src="cisco-logo.png" alt="cisco" class="avatar">
@@ -64,10 +63,28 @@ span.psw{
     </div>
     <div class="container">
       <label for="email"><b>Email Address</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-      <button type="submit" value="Send" required>Send Email</button>
+      <input type="text" placeholder="Enter Email" id="email" required>
+      <button onclick = "sendPw()" required>Send Email</button>
     </div>
 </div>
-</form>
+
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyAp5iYo1gNvVNFhrchp0ivU0rpGM6GA_pE",
+          authDomain: "fir-login-fc2fd.firebaseapp.com",
+          databaseURL: "https://fir-login-fc2fd.firebaseio.com",
+          projectId: "fir-login-fc2fd",
+          storageBucket: "fir-login-fc2fd.appspot.com",
+          messagingSenderId: "310357512497"
+      };
+      firebase.initializeApp(config);
+  </script>
+
+  <script src = "forgotpsw.js">
+
+  </script>
+
 </body>
 </html>
