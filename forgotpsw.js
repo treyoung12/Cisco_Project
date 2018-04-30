@@ -6,7 +6,7 @@ function sendPw(){
 
         // Email sent.
         alert("Sending email...");
-        location = 'index.html';
+        location = 'return.html';
     }).catch(function(error) {
 
         // An error happened.
