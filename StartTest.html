@@ -1,3 +1,4 @@
+<html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://smtpjs.com/v2/smtp.js">
@@ -11,7 +12,7 @@
     width: 70%
   }
   input[type=text], input[type=password]{
-    width: 35%;
+    width: 55%;
     padding: 6px 10px;
   }
   button{
@@ -50,9 +51,10 @@ span.psw{
 optgroup{
   height: 30px;
 }
-.notes{
+.note{
   position: absolute;
-  top: 200px;
+  top: 50px;
+  max-width: 700px;
 }
 .buttons{
 color:red;
@@ -73,7 +75,26 @@ th, td {
   height: 60px;
   width: 80px;
 }
+.button{
+  width: 5%;
+}
+.register_account
+{
+    background: red;
+    width:62%;
+    padding:1.5%;
+}
 
+.register_account form select
+{
+    width:100%;
+    font-size:0.8em;
+    color:#000;
+    padding:8px;
+    margin:5px 0;
+    background: yellow;
+    border: 1px solid #fff !important;
+}
   </style>
 </head>
 <body>
@@ -81,29 +102,23 @@ th, td {
 <h3><font color="red">Select TOE:</h3></font>
 <select id="item"size="10" style="height: 300px;">
   <optgroup>
-    <option value="TOE1">ASR1001X</option>
-    <option value="TOE2">ASR1002HX</option>
-    <option value="TOE3">ASR920</option>
-    <option value="TOE4">C1111</option>
-    <option value="TOE5">C2960CX8TCL</option>
-    <option value="TOE6">C2960L</option>
-    <option value="TOE7">C260S24</option>
-    <option value="TOE8">C2960XR48FPS1_2</option>
-    <option value="TOE9">C2960XS24_1</option>
-    <option value="TOE10">C296OXS24_2</option>
-    <option value="TOE11">C3560CX8TCS</option>
-    <option value="TOE12">C3650</option>
-    <option value="TOE13">C3750X</option>
-    <option value="TOE14">C3850S24_1</option>
-    <option value="TOE15">C3850S24_2</option>
-    <option value="TOE16">C6504E2T</option>
-    <option value="TOE17">C6807XL6T</option>
-    <option value="TOE18">C930024P</option>
-    <option value="TOE19">C9407R</option>
+    <option value="TOE1">NX5596-cc-lab</option>
+    <option value="TOE2">NX3064</option>
+    <option value="TOE3">ASR9K-1</option>
+    <option value="TOE4">ASR9K-2</option>
+    <option value="TOE5">ASR9K-3</option>
+    <option value="TOE6">NX3172_1</option>
+    <option value="TOE7">NX3172_2</option>
+    <option value="TOE8">C3850-24S</option>
+    <option value="TOE9">ISR4451_2</option>
+    <option value="TOE10">NCS55A1</option>
+    <option value="TOE11">NCS5508</option>
+    <option value="TOE12">ISR4451_4</option>
+    <option value="TOE13">ISR4451_3</option>
   </optgroup>
 </select>
 <h3 style="position: absolute; top: -10px; right: 610px;"><font color="white">Enter Test Notes (e.g. SFR or feature - do not include username or TOE name)</font></h3>
-<input type="text" class="notes" name="notes" value="notes" style="position: absolute; top:50px;">
+<input type="text" class="note" name="notes" placeholder="notes">
 <h3 style="position: absolute; top: 100px; right: 1165px;"><font color="red">Select Test Bed</font></h3>
 <select id="item" style="height: 30px; width:500px; position:absolute; top:150px; right:803px;">
 <optgroup>
@@ -145,7 +160,7 @@ th, td {
   </tr>
 </table>
 
-<button style="position:absolute; top: 765px; right:1350px;" onclick = "logout()"><h4 style="position:absolute; top:-15px; right:15px">Logout</h4></button>
+<button class="button" style="position:absolute; top: 765px; right:1360px;" onclick = "logout()"><h4 style="position:absolute; top:-10px; right:15px">Logout</h4></button>
 <img src="cisco-logo2.png" alt="cisco" class="avt" style="position:absolute; top: 750px; right:20px;">
 <link href="cisco.css" rel="stylesheet" type="text/css" />
 
