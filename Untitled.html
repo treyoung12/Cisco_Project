@@ -1,0 +1,102 @@
+
+<html>
+<head>
+<title>HTML email</title>
+</head>
+<style type="text/css">
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0; /* Space from this element (entire page) and others*/
+    padding: 0; /*space from content and border*/
+    border: solid red;
+    border-width: thick;
+    overflow:hidden;
+    display:block;
+    box-sizing: border-box;
+}
+</style>
+<body border="red">
+<center>
+<br>
+<img src="cisco-logo.png" alt="cisco" class="avatar">
+<br>
+<br>
+<br>
+<h4>Thank you for submitting the reset email form. Please click the link below to reset you password.</h4>
+<a href="repswd.html"><font color="#14485c"><b>repswd.html</b></font></a>
+
+<script type="text/javascript"><!--
+/*
+   Email Engine for Sending Email via Server Side Script
+   Version 1.0
+   March 19, 2012
+
+   Will Bontrager Software, LLC
+   https://www.willmaster.com/
+   Copyright 2012 Will Bontrager Software, LLC
+
+   This software is provided "AS IS," without
+   any warranty of any kind, without even any
+   implied warranty such as merchantability
+   or fitness for a particular purpose.
+   Will Bontrager Software, LLC grants
+   you a royalty free license to use or
+   modify this software provided this
+   notice appears on all copies.
+*/
+
+/////////////////////////////////////////////
+// One place to customize.
+//
+// Specify the URL of the emailing script.
+
+var URLofEmailingScript = "forgotpsw.html";
+
+// End of customization section.
+/////////////////////////////////////////////
+
+URLofEmailingScript = URLofEmailingScript.replace(/^https?:\/\/[^\/]*/i,"");
+
+function GetServerRequestObject() {
+var http;
+if (window.XMLHttpRequest) {
+   try { http = new XMLHttpRequest(); }
+   catch(e) {}
+   }
+else if (window.ActiveXObject) {
+   try { http = new ActiveXObject("Msxml2.XMLHTTP"); }
+   catch(e) {
+      try { http = new ActiveXObject("Microsoft.XMLHTTP"); }
+      catch(e) {}
+      }
+   }
+else {
+   alert('Unable to connect with the server.');
+   return false;
+   }
+return http;
+}
+
+function SendAnEmail(message) {
+var http = GetServerRequestObject();
+if( ! http ) { alert('Unable to open http connection'); return true; }
+var url = URLofEmailingScript + "?" + escape("Page with link") + "=" + escape(document.URL);
+if( message.length ) { url += "&Message=" + escape(message); }
+http.onreadystatechange = function() {};
+http.open("GET",url,true);
+http.send("");
+return true;
+}
+//--></script>
+<a
+   href="javascript:alert('thank you')"
+   onclick="return SendAnEmail('The special link was clicked')">
+Link Silently Sends Email
+</a>
+
+
+
+</center>
+</body>
+</html>

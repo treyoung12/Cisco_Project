@@ -38,8 +38,9 @@
 img.avatar{
   width: 40%
 }
-.container{
-  padding: 16px;
+.containers{
+  padding: 23px;
+  width: 96%;
 }
 
 span.psw{
@@ -56,35 +57,18 @@ span.psw{
 </head>
 <body>
   <link href="cisco.css" rel="stylesheet" type="text/css" />
-    <div class="container" style="background-color:white;">
+  <form action="cisco.php" method="post" style="position: absolute; top: 200px; right:140px;">
+    <div class="containers" style="background-color:white;">
     <div class="imgcontainer">
       <img src="cisco-logo.png" alt="cisco" class="avatar">
 
     </div>
-    <div class="container">
+    <div class="containers">
       <label for="email"><b>Email Address</b></label>
-      <input type="text" placeholder="Enter Email" id="email" required>
-      <button onclick = "sendPw()" required>Send Email</button>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <button type="submit" value="Send" required>Send Email</button>
     </div>
 </div>
-
-  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-  <script>
-      // Initialize Firebase
-      var config = {
-          apiKey: "AIzaSyAp5iYo1gNvVNFhrchp0ivU0rpGM6GA_pE",
-          authDomain: "fir-login-fc2fd.firebaseapp.com",
-          databaseURL: "https://fir-login-fc2fd.firebaseio.com",
-          projectId: "fir-login-fc2fd",
-          storageBucket: "fir-login-fc2fd.appspot.com",
-          messagingSenderId: "310357512497"
-      };
-      firebase.initializeApp(config);
-  </script>
-
-  <script src = "forgotpsw.js">
-
-  </script>
-
+</form>
 </body>
 </html>

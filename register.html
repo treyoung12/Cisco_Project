@@ -1,20 +1,32 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
+  <style>
+  .containers{
+  position: absolute;
+  top: 170px;
+  width: 70%;
+  right: 120px;
+  padding: 16px;
+  width: 80%;
+  border: 2px solid #c2112f;
+  }
+  </style>
 <link href="cisco.css" rel="stylesheet" type="text/css" />
 
-<div class="container" style="background-color:white;">
+<div class="containers" style="background-color:white;">
     <div class="imgcontainer">
         <img src="cisco-logo.png" alt="cisco" class="avatar">
     </div>
 
     <div class="container">
-        <input type="text"placeholder="Enter Username" id="userName" required/>
-        <input type="password" placeholder="Enter Password" id="userPass" required/>
-        <button onclick = "register()">Register</button>
+        <input type="text" placeholder="Enter Username" class="name" id="userName" required/>
+        <input type="password" placeholder="Enter Password" class="password" id="userPass" required/>
+        <button class="login" onclick = "register()">Register</button>
     </div>
 
     <div class="container" style="background-color:white">

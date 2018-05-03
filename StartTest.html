@@ -70,6 +70,7 @@ table, th, td {
 }
 th, td {
     padding: 10px;
+    color:green;
 }
 .avt{
   height: 60px;
@@ -95,26 +96,76 @@ th, td {
     background: yellow;
     border: 1px solid #fff !important;
 }
+.optgroup{
+  font-size: 15em;
+  color: green;
+  text-align: center;
+}
   </style>
 </head>
 <body>
+<script>
+function myFunction() {
+var opts= document.getElementById("items");
+//var opt= document.getElementById('items');
 
+
+for(var i=0; i<opts.length; i++){
+  if(opts[i].selected){
+  opts.options[i].style.backgroundColor = "red";
+
+}
+}
+}
+function myFunction2() {
+var opts= document.getElementById("items");
+var opts2= document.getElementById("it");
+
+for(var i=0; i<opts.length; i++){
+  if(opts[i].style.backgroundColor=="red"){
+    opts[i].style.backgroundColor="white";
+
+  }
+}
+for(var i=0; i<opts2.length; i++){
+  if(opts2[i].style.color=="red"){
+    opts2[i].style.color="green";
+
+  }
+}
+}
+function TestBed() {
+  var opts= document.getElementById("it");
+  for(var i=0; i<opts.length; i++){
+    if(opts[i].selected){
+    opts.options[i].style.color = "red";
+
+  }
+  }
+     }
+</script>
 <h3><font color="red">Select TOE:</h3></font>
-<select id="item"size="10" style="height: 300px;">
+<select id="items" size="10" style="height: 300px;" multiple>
   <optgroup>
-    <option value="TOE1">NX5596-cc-lab</option>
-    <option value="TOE2">NX3064</option>
-    <option value="TOE3">ASR9K-1</option>
-    <option value="TOE4">ASR9K-2</option>
-    <option value="TOE5">ASR9K-3</option>
-    <option value="TOE6">NX3172_1</option>
-    <option value="TOE7">NX3172_2</option>
-    <option value="TOE8">C3850-24S</option>
-    <option value="TOE9">ISR4451_2</option>
-    <option value="TOE10">NCS55A1</option>
-    <option value="TOE11">NCS5508</option>
-    <option value="TOE12">ISR4451_4</option>
-    <option value="TOE13">ISR4451_3</option>
+    <option value="TOE1">ASR1001X</option>
+    <option value="TOE2">ASR1002HX</option>
+    <option value="TOE3">ASR920</option>
+    <option value="TOE4">C1111</option>
+    <option value="TOE5">C2960CX8TCL</option>
+    <option value="TOE6">C2960L</option>
+    <option value="TOE7">C260S24</option>
+    <option value="TOE8">C2960XR48FPS1_2</option>
+    <option value="TOE9">C2960XS24_1</option>
+    <option value="TOE10">C296OXS24_2</option>
+    <option value="TOE11">C3560CX8TCS</option>
+    <option value="TOE12">C3650</option>
+    <option value="TOE13">C3750X</option>
+    <option value="TOE14">C3850S24_1</option>
+    <option value="TOE15">C3850S24_2</option>
+    <option value="TOE16">C6504E2T</option>
+    <option value="TOE17">C6807XL6T</option>
+    <option value="TOE18">C930024P</option>
+    <option value="TOE19">C9407R</option>
   </optgroup>
 </select>
 <h3 style="position: absolute; top: -10px; right: 610px;"><font color="white">Enter Test Notes (e.g. SFR or feature - do not include username or TOE name)</font></h3>
@@ -122,44 +173,43 @@ th, td {
 <h3 style="position: absolute; top: 100px; right: 1165px;"><font color="red">Select Test Bed</font></h3>
 <select id="item" style="height: 30px; width:500px; position:absolute; top:150px; right:803px;">
 <optgroup>
-    <option class="tb1" value="notes">Test Bed 1 available</option>
-    <option class="tb2" value="notes">Test Bed 2 available</option>
-    <option class="tb3" value="notes">Test Bed 3 available</option>
-    <option class="tb4" value="notes">Test Bed 4 available</option>
-    <option class="tb5" value="notes">Test Bed 5 available</option>
+    <option class="tb1" value="notes">Select Test Bed</option>
+    <option class="tb2" value="notes">CC1</option>
+    <option class="tb2" value="notes">CC2</option>
+    <option class="tb2" value="notes">CC3</option>
+    <option class="tb2" value="notes">CC4</option>
+    <option class="tb2" value="notes">CC5</option>
+    <option class="tb2" value="notes">CC6</option>
+    <option class="tb2" value="notes">CC7</option>
+    <option class="tb2" value="notes">HCC1</option>
+    <option class="tb2" value="notes">HCC2</option>
+    <option class="tb2" value="notes">HCC3</option>
+    <option class="tb2" value="notes">HCC4</option>
+    <option class="tb2" value="notes">HCC5</option>
+    <option class="tb2" value="notes">HCC6</option>
+
+
 </optgroup>
 </select>
 <input type="checkbox" name="selectTOE" value="Toe" style="position:absolute; top: 200px;"><font color="red"><p style="position:absolute; top:185px; right:1060px;">Select to clean TOE before run</p></font>
-<button class="buttons" type="button" style="position:absolute; top: 220px; right:1223px;"><h4 style="position:absolute; top:-15px; right:20px">Reset</h4></button>
-<button class="buttons" type="button" style="position:absolute; top: 220px; right:1120px;"><h4 style="position:absolute; top:-15px; right:15px">Submit</h4></button>
+<button class="buttons" type="button" onclick="myFunction2()" style="position:absolute; top: 220px; right:1223px;"><h4 style="position:absolute; top:-15px; right:20px">Reset</h4></button>
+<button class="buttons" type="button" onclick="myFunction(); TestBed();" style="position:absolute; top: 220px; right:1120px;"><h4 style="position:absolute; top:-15px; right:15px">Submit</h4></button>
 <br>
 <br>
 <h3><font color="white">Select the radio button to kill a test</font></h3>
 <h3><font color="red">Caution: Selecting to terminate the run will kill it immediatley</font></h3>
 <br>
-<table>
-  <tr>
-    <td><input type="radio" name="toe" value="toe1"></td>
-    <td width="800">Test Bed 1 is available</td>
-  </tr>
-  <tr>
-    <td><input type="radio" name="toe" value="toe2"></td>
-    <td>Test Bed 2 is available</td>
-  </tr>
-  <tr>
-    <td><input type="radio" name="toe" value="toe3"></td>
-    <td>Test Bed 3 is available</td>
-  </tr>
-  <tr>
-    <td><input type="radio" name="toe" value="toe4"></td>
-    <td>Test Bed 4 is available</td>
-  </tr>
-  <tr>
-    <td><input type="radio" name="toe" value="toe5"></td>
-    <td>Test Bed 5 is available</td>
-  </tr>
-</table>
-
+<select id="it" size="10" style="height: 100px; width:190px;" multiple>
+<center>
+  <optgroup>
+    <option value="TOE1" class="optgroup">*Test Bed 1 is available</option>
+    <option value="TOE2" class="optgroup">*Test Bed 2 is available</option>
+    <option value="TOE3" class="optgroup">*Test Bed 3 is available</option>
+    <option value="TOE4" class="optgroup">*Test Bed 4 is available</option>
+    <option value="TOE5" class="optgroup">*Test Bed 5 is available</option>
+</center>
+</optgroup>
+</select>
 <button class="button" style="position:absolute; top: 765px; right:1360px;" onclick = "logout()"><h4 style="position:absolute; top:-10px; right:15px">Logout</h4></button>
 <img src="cisco-logo2.png" alt="cisco" class="avt" style="position:absolute; top: 750px; right:20px;">
 <link href="cisco.css" rel="stylesheet" type="text/css" />
